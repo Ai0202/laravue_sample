@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//anyはあってもなくてもOK(?がそれを表す)
+//ある場合はどんな文字列でもOK(.+がそれを表す)
+Route::get('/{any?}', function () {
+    return view('index');
+})->where('any', '.+'); 
