@@ -20338,7 +20338,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*!******************************!*\
   !*** ./resources/js/util.js ***!
   \******************************/
-/*! exports provided: OK, CREATED, INTERNAL_SERVER_ERROR, getCookieValue */
+/*! exports provided: OK, CREATED, INTERNAL_SERVER_ERROR, UNPROCESSABLE_ENTITY, getCookieValue */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20346,6 +20346,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OK", function() { return OK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATED", function() { return CREATED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INTERNAL_SERVER_ERROR", function() { return INTERNAL_SERVER_ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNPROCESSABLE_ENTITY", function() { return UNPROCESSABLE_ENTITY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieValue", function() { return getCookieValue; });
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -20358,6 +20359,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var OK = 200;
 var CREATED = 201;
 var INTERNAL_SERVER_ERROR = 500;
+var UNPROCESSABLE_ENTITY = 422; //TODO バリデーションエラーから
+
 /**
  * クッキーの値を取得する
  * @param {String} searchKey 検索するキー
