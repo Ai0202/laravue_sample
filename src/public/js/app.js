@@ -1862,7 +1862,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return this.$store.dispatch('auth/logout');
 
               case 2:
-                this.$router.push('/login');
+                if (this.apiStatus) {
+                  this.$router.push('/login');
+                }
 
               case 3:
               case "end":
@@ -2048,7 +2050,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return this.$store.dispatch('auth/login', this.loginForm);
 
               case 2:
-                if ($this.apiStatus) {
+                if (this.apiStatus) {
                   // トップページに移動する
                   this.$router.push('/');
                 }
