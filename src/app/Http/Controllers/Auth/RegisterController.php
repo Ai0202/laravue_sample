@@ -70,7 +70,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function registerd(Request $request, $user)
+    protected function registered(Request $request, $user)
     {
         return $user;
     }
