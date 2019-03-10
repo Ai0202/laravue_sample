@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Photo::class, function (Faker $faker) {
     return [
         'id' => str_random(12),
         'user_id' => function () {
