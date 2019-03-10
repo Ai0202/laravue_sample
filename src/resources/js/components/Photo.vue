@@ -16,7 +16,7 @@
         <button 
           class="photo__action photo__action--like" 
           title="Like photo">
-          <i class="icon icon-md-heart"></i>12
+          <i class="icon ion-md-heart"></i>12
         </button>
         <a 
           class="photo__action" 
