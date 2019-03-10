@@ -8,6 +8,14 @@ class Photo extends Model
 {
     protected $keyType = 'string';
 
+    protected $appends = [
+        'url',
+    ];
+
+    protected $visible = [
+        'id', 'owner', 'url',
+    ];
+
     const ID_LENGTH = 12;
 
     public function __construct(array $attributes = [])
@@ -41,4 +49,15 @@ class Photo extends Model
 
         return $id;
     }
+
+    public function owner()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id', 'users');
+    }
+
+    public function getUrlAttribute()
+    {
+        return Storage::cloud()->url($this->attributes['filename']);
+    }
+
 }

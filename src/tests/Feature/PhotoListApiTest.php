@@ -14,6 +14,9 @@ class PhotoListApiTest extends TestCase
 {
     use RefreshDatabase;
 
+    /**
+     * @test
+     */
     public function returnRightConstructionJson() 
     {
         factory(Photo::class, 5)->create();
