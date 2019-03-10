@@ -4052,7 +4052,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c(
-        "RouterLInk",
+        "RouterLink",
         {
           staticClass: "photo__overlay",
           attrs: {
