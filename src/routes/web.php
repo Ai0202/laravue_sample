@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/photos/{photo}/download', 'PhotoController@download');
+
 //anyはあってもなくてもOK(?がそれを表す)
 //ある場合はどんな文字列でもOK(.+がそれを表す)
 Route::get('/{any?}', function () {
