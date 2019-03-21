@@ -37,7 +37,7 @@ class PhotoListApiTest extends TestCase
         ->all();
 
         $response->assertStatus(200)
-            ->assertJsonCount(5, 'data')
+            ->assertJsonCount(3, 'data')
             ->assertJsonFragment([
                 'data' => $expected_data,
             ]);
