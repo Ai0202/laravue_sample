@@ -10,11 +10,12 @@ class Photo extends Model
     protected $keyType = 'string';
 
     protected $appends = [
-        'url',
+        'url', 'likes_count', 'liked_by_user',
     ];
 
     protected $visible = [
         'id', 'owner', 'url', 'comments',
+        'likes_count', 'liked_by_user',
     ];
 
     protected $perPage = 3;
@@ -71,6 +72,22 @@ class Photo extends Model
     public function getUrlAttribute()
     {
         return Storage::cloud()->url($this->attributes['filename']);
+    }
+
+    public function getLikesCountAttribute()
+    {
+        return $this->likes->count();
+    }
+
+    public function getLikedByUserAttribute()
+    {
+        if (Auth::guest()) {
+            return false;
+        }
+
+        return $this->likes->contains(function ($user) {
+            return $user->id === Auth::user()->id;
+        });
     }
 
 }

@@ -40,6 +40,8 @@ class PhotoListApiTest extends TestCase
             ->assertJsonCount(3, 'data')
             ->assertJsonFragment([
                 'data' => $expected_data,
+                'liked_by_user' => false,
+                'likes_count' => 0,
             ]);
     }
 }
