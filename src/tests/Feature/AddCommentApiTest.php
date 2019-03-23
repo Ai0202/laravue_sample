@@ -45,6 +45,6 @@ class AddCommentApiTest extends TestCase
             ]);
 
         $this->assertEquals(1, $comments->count());
-        $this->assertEquals($content, $comments[0]->content)
+        $this->assertEquals($content, $comments[0]->content);
     }
 }
