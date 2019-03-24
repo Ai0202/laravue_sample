@@ -63,8 +63,11 @@ export default {
         console.log(this.loginForm.email)
         console.log(this.loginForm.password)
       },
-      register () {
-        console.log(this.registerForm)
+      async register () {
+         // authストアのresigterアクションを呼び出す
+        await this.$store.dispatch('auth/register', this.registerForm)
+
+        this.$router.push('/')
       }
     }
 }
