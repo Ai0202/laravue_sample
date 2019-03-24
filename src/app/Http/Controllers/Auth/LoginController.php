@@ -42,4 +42,11 @@ class LoginController extends Controller
     {
         return $user;
     }
+
+    public function loggedOut(Request $request)
+    {
+        $request->session()->regenerate();
+
+        return response()->json();
+    }
 }
